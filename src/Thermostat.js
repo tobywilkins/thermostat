@@ -2,6 +2,7 @@
 
 function Thermostat () {
   this._temperature = 20;
+  this._powerSaving = true
 };
   Thermostat.prototype = {
     temperature: function() {
@@ -16,5 +17,13 @@ function Thermostat () {
       } else {
         this._temperature = this._temperature + change ;
         }
+      },
+
+      togglePowerSaving: function(){
+        this._powerSaving = !this._powerSaving;
+      },
+
+      isPowerSaving: function(){
+        return this._powerSaving
       }
   }

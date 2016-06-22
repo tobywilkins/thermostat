@@ -13,4 +13,9 @@ describe('Thermostat', function() {
   it('raises error if temp would go over 25 if powersaving is on', function() {
     expect(function() {thermostat.changeTemperature(+50)}).toThrow(new Error('Max temp is 25 with power saving mode'));
   });
+
+  it('toggles power saving mode', function() {
+    thermostat.togglePowerSaving();
+    expect(thermostat.isPowerSaving()).toMatch(/false/);
+  });
 });
