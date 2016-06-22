@@ -8,7 +8,7 @@ describe('Feature Test:', function() {
   });
 
   it('can change the temperature', function() {
-    thermostat.changeTemperature(10);
-    expect(thermostat.temperature()).toEqual(30);
+    thermostat.changeTemperature(2);
+    expect(thermostat.temperature()).toEqual(22);
   });
 });

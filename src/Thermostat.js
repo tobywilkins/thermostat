@@ -9,6 +9,12 @@ function Thermostat () {
     },
 
     changeTemperature: function(change) {
-      this._temperature = this._temperature + change;
-    }
-  };
+      if ((this._temperature + change) < 10) {
+        throw(new Error('minimum temperature is 10'));
+      } else if ((this._temperature + change) > 25) {
+        throw(new Error('Max temp is 25 with power saving mode'));
+      } else {
+        this._temperature = this._temperature + change ;
+        }
+      }
+  }
